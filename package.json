@@ -1,0 +1,12 @@
+{
+    "name": "devops-app",
+    "version": "1.0.0",
+    "description": "My first devops project with docker",
+    "main": "app.js",
+    "scripts":{
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
