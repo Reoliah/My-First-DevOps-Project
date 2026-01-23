@@ -5,6 +5,13 @@ terraform {
       version = "~> 5.0"
     }
   }
+  backend "s3" {
+  bucket = "reoliah-devops-project-terraform-state"
+  key = "global/s3/terraform.tfstate"
+  region = "af-south-1"
+  dynamodb_table = "terraform-locks"
+  encrypt = true
+  }
 }
 
 # 1. Configure the Provider
@@ -34,6 +41,8 @@ module "vpc" {
     Project     = "devops-bootcamp"
   }
 }
+
+
 
 # 3. Create the Kubernetes Cluster (EKS)
 module "eks" {
